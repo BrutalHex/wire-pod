@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"time"
 
@@ -156,9 +157,10 @@ func StartFromProgramInit(sttInitFunc func() error, sttHandlerFunc interface{}, 
 func PostmDNS() {
 	logger.Println("Registering escapepod.local on network (every minute)")
 	epodIsPosting = true
+	num, _ := strconv.Atoi(vars.GetHttpsPort())
 	for {
 		ipAddr := botsetup.GetOutboundIP().String()
-		server, _ := zeroconf.RegisterProxy("escapepod", "_app-proto._tcp", "local.", vars.GetHttpsPort(), "escapepod", []string{ipAddr}, []string{"txtv=0", "lo=1", "la=2"}, nil)
+		server, _ := zeroconf.RegisterProxy("escapepod", "_app-proto._tcp", "local.", num, "escapepod", []string{ipAddr}, []string{"txtv=0", "lo=1", "la=2"}, nil)
 		time.Sleep(time.Second * 60)
 		server.Shutdown()
 		server = nil

@@ -21,6 +21,7 @@ import (
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
 	"github.com/kercre123/chipper/pkg/podonwin"
+	"github.com/kercre123/chipper/pkg/vars"
 	"github.com/ncruces/zenity"
 )
 

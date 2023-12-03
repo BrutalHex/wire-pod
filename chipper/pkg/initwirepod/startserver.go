@@ -95,7 +95,7 @@ func BeginWirepodSpecific(sttInitFunc func() error, sttHandlerFunc interface{}, 
 
 func StartFromProgramInit(sttInitFunc func() error, sttHandlerFunc interface{}, voiceProcessorName string) {
 	err := BeginWirepodSpecific(sttInitFunc, sttHandlerFunc, voiceProcessorName)
-	wbeServerPort = vars.GetWebserverPor()
+	wbeServerPort := vars.GetWebserverPor()
 	if err != nil {
 		logger.Println(fmt.Sprintf("\033[33m\033[1mWire-pod is not setup. Use the webserver at port %s to set up wire-pod.\033[0m", wbeServerPort))
 	} else if !vars.APIConfig.PastInitialSetup {
