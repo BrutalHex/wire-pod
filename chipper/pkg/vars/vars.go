@@ -120,32 +120,33 @@ func GetWebserverPor() string {
 	} else {
 		WebPort = "8080"
 	}
+	return webPort
 }
 
 func GetHttpPort() string {
+	httpServer := "80"
 	if os.Getenv("VECTOR_WEB_PORT") != "" {
 		if _, err := strconv.Atoi(os.Getenv("VECTOR_WEB_PORT")); err == nil {
-			WebPort = os.Getenv("VECTOR_WEB_PORT")
+			httpServer = os.Getenv("VECTOR_WEB_PORT")
 		} else {
 			logger.Println("VECTOR_WEB_PORT contains letters, using default of 80")
-			return "80"
 		}
-	} else {
-		return "80"
+
 	}
+	return httpServer
 }
 
 func GetHttpsPort() string {
+	httpsServer = "443"
 	if os.Getenv("VECTOR_HTTPS_WEB_PORT") != "" {
 		if _, err := strconv.Atoi(os.Getenv("VECTOR_HTTPS_WEB_PORT")); err == nil {
-			WebPort = os.Getenv("VECTOR_HTTPS_WEB_PORT")
+			httpsServer = os.Getenv("VECTOR_HTTPS_WEB_PORT")
 		} else {
 			logger.Println("VECTOR_HTTPS_WEB_PORT contains letters, using default of 443")
-			return "443"
+
 		}
-	} else {
-		return "443"
 	}
+	return httpsServer
 }
 
 func Init() {
