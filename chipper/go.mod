@@ -1,4 +1,4 @@
-module github.com/kercre123/chipper
+module github.com/BrutalHex/chipper
 
 go 1.18
 
