@@ -120,7 +120,7 @@ func GetWebserverPor() string {
 	} else {
 		WebPort = "8080"
 	}
-	return webPort
+	return WebPort
 }
 
 func GetHttpPort() string {
@@ -137,7 +137,7 @@ func GetHttpPort() string {
 }
 
 func GetHttpsPort() string {
-	httpsServer = "443"
+	httpsServer := "443"
 	if os.Getenv("VECTOR_HTTPS_WEB_PORT") != "" {
 		if _, err := strconv.Atoi(os.Getenv("VECTOR_HTTPS_WEB_PORT")); err == nil {
 			httpsServer = os.Getenv("VECTOR_HTTPS_WEB_PORT")
