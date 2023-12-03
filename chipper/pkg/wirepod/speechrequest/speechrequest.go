@@ -5,10 +5,10 @@ import (
 	"errors"
 	"os"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vtt"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
 	"github.com/digital-dream-labs/opus-go/opus"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vtt"
 	"github.com/maxhawkins/go-webrtcvad"
 )
 

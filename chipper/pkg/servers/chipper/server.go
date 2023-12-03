@@ -1,8 +1,8 @@
 package server
 
 import (
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vtt"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
-	"github.com/kercre123/chipper/pkg/vtt"
 )
 
 type intentProcessor interface {

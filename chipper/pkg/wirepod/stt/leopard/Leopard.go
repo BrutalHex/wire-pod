@@ -7,9 +7,9 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	sr "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/speechrequest"
 	leopard "github.com/Picovoice/leopard/binding/go"
-	"github.com/kercre123/chipper/pkg/logger"
-	sr "github.com/kercre123/chipper/pkg/wirepod/speechrequest"
 )
 
 var BotNum int

@@ -6,9 +6,9 @@ import (
 	"os"
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	sr "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/speechrequest"
 	"github.com/asticode/go-asticoqui"
-	"github.com/kercre123/chipper/pkg/logger"
-	sr "github.com/kercre123/chipper/pkg/wirepod/speechrequest"
 )
 
 var Name string = "coqui"

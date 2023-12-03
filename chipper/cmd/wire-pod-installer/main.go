@@ -20,15 +20,15 @@ import (
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/layout"
 	"fyne.io/fyne/v2/widget"
-	"github.com/kercre123/chipper/pkg/podonwin"
-	"github.com/kercre123/chipper/pkg/vars"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/podonwin"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
 	"github.com/ncruces/zenity"
 )
 
 //go:embed ico
 var iconData embed.FS
 
-var amd64podURL string = "https://github.com/kercre123/wire-pod/releases/latest/download/wire-pod-win-amd64.zip"
+var amd64podURL string = "https://github.com/BrutalHex/wire-pod/wire-pod/releases/latest/download/wire-pod-win-amd64.zip"
 
 //var amd64podURL string = "http://192.168.1.2:82/wire-pod-win-amd64.zip"
 

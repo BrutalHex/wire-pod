@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
 	"github.com/fforchino/vector-go-sdk/pkg/vectorpb"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
 )
 
 var JdocsPingerBots struct {

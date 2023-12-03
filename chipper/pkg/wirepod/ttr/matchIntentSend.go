@@ -7,10 +7,10 @@ import (
 	"os/exec"
 	"strings"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vtt"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
-	"github.com/kercre123/chipper/pkg/vtt"
 )
 
 type systemIntentResponseStruct struct {

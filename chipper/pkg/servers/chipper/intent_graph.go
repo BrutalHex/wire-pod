@@ -3,9 +3,9 @@ package server
 import (
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vtt"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vtt"
 )
 
 // StreamingIntentGraph handles intent graph request streams

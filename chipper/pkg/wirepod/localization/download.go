@@ -19,11 +19,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
 )
 
-var URLPrefix string = "https://github.com/kercre123/vosk-models/raw/main/"
+var URLPrefix string = "https://github.com/BrutalHex/wire-pod/vosk-models/raw/main/"
 
 //var URLPrefix string = "https://alphacephei.com/vosk/models/"
 

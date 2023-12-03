@@ -11,7 +11,7 @@ import (
 
 // DisplayIcon string (path)
 // DisplayVersion string (v1.0.0)
-// Publisher string (github.com/kercre123)
+// Publisher string (github.com/BrutalHex/wire-pod)
 // UninstallString (is.Where + uninstall.exe)
 // InstallLocation (is.Where)
 var Win_UninstallKeyKey = registry.LOCAL_MACHINE

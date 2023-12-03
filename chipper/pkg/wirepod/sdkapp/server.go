@@ -13,10 +13,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
+	botsetup "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/setup"
 	"github.com/fforchino/vector-go-sdk/pkg/vectorpb"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
-	botsetup "github.com/kercre123/chipper/pkg/wirepod/setup"
 	"github.com/ncruces/zenity"
 )
 

@@ -7,11 +7,11 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vtt"
+	sr "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/speechrequest"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
-	"github.com/kercre123/chipper/pkg/vtt"
-	sr "github.com/kercre123/chipper/pkg/wirepod/speechrequest"
 	"github.com/pkg/errors"
 	"github.com/soundhound/houndify-sdk-go"
 )

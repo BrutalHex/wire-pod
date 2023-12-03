@@ -6,10 +6,10 @@ import (
 	"os"
 	"strings"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	tokenserver "github.com/BrutalHex/wire-pod/chipper/pkg/servers/token"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
 	"github.com/digital-dream-labs/api/go/jdocspb"
-	"github.com/kercre123/chipper/pkg/logger"
-	tokenserver "github.com/kercre123/chipper/pkg/servers/token"
-	"github.com/kercre123/chipper/pkg/vars"
 	"google.golang.org/grpc/peer"
 )
 

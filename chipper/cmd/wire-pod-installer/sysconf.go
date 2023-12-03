@@ -7,7 +7,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"github.com/kercre123/chipper/pkg/podonwin"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/podonwin"
 )
 
 var GitHubTag string
@@ -40,7 +40,7 @@ func UpdateUninstallRegistry(is InstallSettings) {
 	appName := "wire-pod"
 	displayIcon := filepath.Join(is.Where, `\chipper\icons\ico\pod256x256.ico`)
 	displayVersion := GitHubTag
-	publisher := "github.com/kercre123"
+	publisher := "github.com/BrutalHex/wire-pod"
 	uninstallString := filepath.Join(is.Where, `\uninstall.exe`)
 	installLocation := filepath.Join(is.Where, `\chipper\chipper.exe`)
 	err := podonwin.UpdateRegistryValueString(podonwin.UninstallKey, "DisplayName", appName)

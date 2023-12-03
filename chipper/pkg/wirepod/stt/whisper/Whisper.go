@@ -10,10 +10,10 @@ import (
 	"os"
 	"strings"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	sr "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/speechrequest"
 	"github.com/go-audio/audio"
 	"github.com/go-audio/wav"
-	"github.com/kercre123/chipper/pkg/logger"
-	sr "github.com/kercre123/chipper/pkg/wirepod/speechrequest"
 	"github.com/orcaman/writerseeker"
 )
 

@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
 	pb "github.com/digital-dream-labs/api/go/chipperpb"
-	"github.com/kercre123/chipper/pkg/logger"
 )
 
 const (

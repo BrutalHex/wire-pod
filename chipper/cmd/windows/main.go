@@ -10,12 +10,12 @@ import (
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/podonwin"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
+	botsetup "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/setup"
+	stt "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/stt/vosk"
 	"github.com/getlantern/systray"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/podonwin"
-	"github.com/kercre123/chipper/pkg/vars"
-	botsetup "github.com/kercre123/chipper/pkg/wirepod/setup"
-	stt "github.com/kercre123/chipper/pkg/wirepod/stt/vosk"
 	"github.com/ncruces/zenity"
 )
 

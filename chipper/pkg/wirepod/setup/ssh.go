@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
 	scp "github.com/bramvdbogaerde/go-scp"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
 	"golang.org/x/crypto/ssh"
 )
 

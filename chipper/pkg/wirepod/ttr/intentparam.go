@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/BrutalHex/wire-pod/chipper/pkg/logger"
+	"github.com/BrutalHex/wire-pod/chipper/pkg/vars"
+	lcztn "github.com/BrutalHex/wire-pod/chipper/pkg/wirepod/localization"
 	"github.com/fforchino/vector-go-sdk/pkg/vector"
-	"github.com/kercre123/chipper/pkg/logger"
-	"github.com/kercre123/chipper/pkg/vars"
-	lcztn "github.com/kercre123/chipper/pkg/wirepod/localization"
 )
 
 // stt
