@@ -277,7 +277,7 @@ func GetPreferences(myApp fyne.App) {
 	installDir.Disable()
 
 	webPort := widget.NewEntry()
-	webPort.SetText("8080")
+	webPort.SetText(vars.GetWebserverPor())
 
 	selectDirButton := widget.NewButton("Select Directory", func() {
 		dlg := dialog.NewFolderOpen(func(uri fyne.ListableURI, err error) {

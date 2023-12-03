@@ -2,6 +2,7 @@ package wirepod_ttr
 
 import (
 	"encoding/json"
+	"fmt"
 	"strconv"
 	"strings"
 
@@ -175,7 +176,7 @@ func ParamChecker(req interface{}, intent string, speechText string, botSerial s
 			for _, bot := range vars.BotInfo.Robots {
 				if botSerial == bot.Esn {
 					guid = bot.GUID
-					target = bot.IPAddress + ":443"
+					target = bot.IPAddress + fmt.Sprintf(":%s", vars.GetHttpsPort())
 					matched = true
 					break
 				}

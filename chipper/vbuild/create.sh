@@ -51,7 +51,7 @@ echo "export DEBUG_LOOGING=true" > tmp/botpack/wire-pod/chipper/source.sh
 echo "export STT_SERVICE=vosk" >> tmp/botpack/wire-pod/chipper/source.sh
 echo "export VOSK_WITH_GRAMMER=true" >> tmp/botpack/wire-pod/chipper/source.sh
 echo "export JDOCS_ENABLE_PINGER=false" >> tmp/botpack/wire-pod/chipper/source.sh
-echo "export WEBSERVER_PORT=8081" >> tmp/botpack/wire-pod/chipper/source.sh
+
 
 cp custom-start.sh tmp/botpack/wire-pod/chipper/start.sh
 cp chipper tmp/botpack/wire-pod/chipper/

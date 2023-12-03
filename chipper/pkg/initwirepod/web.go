@@ -45,7 +45,7 @@ func ChipperHTTPApi(w http.ResponseWriter, r *http.Request) {
 		return
 	case r.URL.Path == "/api-chipper/use_ep":
 		vars.APIConfig.Server.EPConfig = true
-		vars.APIConfig.Server.Port = "443"
+		vars.APIConfig.Server.Port = vars.GetHttpsPort()
 		vars.APIConfig.PastInitialSetup = true
 		botsetup.CreateServerConfig()
 		vars.WriteConfigToDisk()

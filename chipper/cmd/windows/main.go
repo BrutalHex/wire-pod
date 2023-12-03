@@ -120,7 +120,7 @@ func main() {
 
 	webPort, err := podonwin.GetRegistryValueString(podonwin.SoftwareKey, "WebPort")
 	if err == nil {
-		os.Setenv("WEBSERVER_PORT", webPort)
+		os.Setenv("VECTOR_WEBSERVER_PORT", webPort)
 	}
 
 	go systray.Run(onReady, onExit)

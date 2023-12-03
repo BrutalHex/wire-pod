@@ -23,7 +23,6 @@ var Win_UninstallPodPerms uint32 = registry.QUERY_VALUE
 
 // InstallPath string (is.Where)
 // PodVersion string (v1.0.0)
-// WebPort string (8080)
 // LastRunningPID int (for wire-pod runtime, installer shouldn't touch this)
 var Win_SoftwareKeyKey = registry.CURRENT_USER
 var Win_SoftwarePodPerms uint32 = registry.READ | registry.WRITE

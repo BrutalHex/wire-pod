@@ -109,6 +109,45 @@ func join(p1, p2 string) string {
 	return filepath.Join(p1, p2)
 }
 
+func GetWebserverPor() string {
+	if os.Getenv("VECTOR_VECTOR_WEBSERVER_PORT") != "" {
+		if _, err := strconv.Atoi(os.Getenv("VECTOR_WEBSERVER_PORT")); err == nil {
+			WebPort = os.Getenv("VECTOR_WEBSERVER_PORT")
+		} else {
+			logger.Println("VECTOR_WEBSERVER_PORT contains letters, using default of 8080")
+			WebPort = "8080"
+		}
+	} else {
+		WebPort = "8080"
+	}
+}
+
+func GetHttpPort() string {
+	if os.Getenv("VECTOR_WEB_PORT") != "" {
+		if _, err := strconv.Atoi(os.Getenv("VECTOR_WEB_PORT")); err == nil {
+			WebPort = os.Getenv("VECTOR_WEB_PORT")
+		} else {
+			logger.Println("VECTOR_WEB_PORT contains letters, using default of 80")
+			return "80"
+		}
+	} else {
+		return "80"
+	}
+}
+
+func GetHttpsPort() string {
+	if os.Getenv("VECTOR_HTTPS_WEB_PORT") != "" {
+		if _, err := strconv.Atoi(os.Getenv("VECTOR_HTTPS_WEB_PORT")); err == nil {
+			WebPort = os.Getenv("VECTOR_HTTPS_WEB_PORT")
+		} else {
+			logger.Println("VECTOR_HTTPS_WEB_PORT contains letters, using default of 443")
+			return "443"
+		}
+	} else {
+		return "443"
+	}
+}
+
 func Init() {
 	if VarsInited {
 		logger.Println("Not initting vars again")
@@ -138,16 +177,7 @@ func Init() {
 		os.Mkdir(Certs, 0777)
 	}
 
-	if os.Getenv("WEBSERVER_PORT") != "" {
-		if _, err := strconv.Atoi(os.Getenv("WEBSERVER_PORT")); err == nil {
-			WebPort = os.Getenv("WEBSERVER_PORT")
-		} else {
-			logger.Println("WEBSERVER_PORT contains letters, using default of 8080")
-			WebPort = "8080"
-		}
-	} else {
-		WebPort = "8080"
-	}
+	WebPort = GetWebserverPor()
 
 	// figure out user SDK path, containing sdk_config.ini
 	// has to be done like this because wire-pod is running as root

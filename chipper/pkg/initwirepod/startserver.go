@@ -41,7 +41,8 @@ func serveOk(w http.ResponseWriter, r *http.Request) {
 
 func httpServe(l net.Listener) error {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/ok:80", serveOk)
+	webPort := vars.GetHttpPort()
+	mux.HandleFunc(fmt.Sprintf("/ok:%s", webPort), serveOk)
 	mux.HandleFunc("/ok", serveOk)
 	s := &http.Server{
 		Handler: mux,
@@ -94,13 +95,14 @@ func BeginWirepodSpecific(sttInitFunc func() error, sttHandlerFunc interface{}, 
 
 func StartFromProgramInit(sttInitFunc func() error, sttHandlerFunc interface{}, voiceProcessorName string) {
 	err := BeginWirepodSpecific(sttInitFunc, sttHandlerFunc, voiceProcessorName)
+	wbeServerPort = vars.GetWebserverPor()
 	if err != nil {
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println(fmt.Sprintf("\033[33m\033[1mWire-pod is not setup. Use the webserver at port %s to set up wire-pod.\033[0m", wbeServerPort))
 	} else if !vars.APIConfig.PastInitialSetup {
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println(fmt.Sprintf("\033[33m\033[1mWire-pod is not setup. Use the webserver at port %s to set up wire-pod.\033[0m", wbeServerPort))
 	} else if vars.APIConfig.STT.Service == "vosk" && vars.APIConfig.STT.Language == "" {
 		logger.Println("\033[33m\033[1mLanguage value is blank, but STT service is Vosk. Reinitiating setup process.\033[0m")
-		logger.Println("\033[33m\033[1mWire-pod is not setup. Use the webserver at port 8080 to set up wire-pod.\033[0m")
+		logger.Println(fmt.Sprintf("\033[33m\033[1mWire-pod is not setup. Use the webserver at port %s to set up wire-pod.\033[0m", wbeServerPort))
 		vars.APIConfig.PastInitialSetup = false
 	} else {
 		//go PostmDNS()

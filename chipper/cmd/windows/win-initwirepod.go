@@ -76,7 +76,8 @@ func serveOk(w http.ResponseWriter, r *http.Request) {
 
 func httpServe(l net.Listener) error {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/ok:80", serveOk)
+	webPort := vars.GetHttpPort()
+	mux.HandleFunc(fmt.Sprintf("/ok:%s", webPort), serveOk)
 	mux.HandleFunc("/ok", serveOk)
 	s := &http.Server{
 		Handler: mux,
@@ -157,7 +158,7 @@ func PostmDNS() {
 	epodIsPosting = true
 	for {
 		ipAddr := botsetup.GetOutboundIP().String()
-		server, _ := zeroconf.RegisterProxy("escapepod", "_app-proto._tcp", "local.", 443, "escapepod", []string{ipAddr}, []string{"txtv=0", "lo=1", "la=2"}, nil)
+		server, _ := zeroconf.RegisterProxy("escapepod", "_app-proto._tcp", "local.", vars.GetHttpsPort(), "escapepod", []string{ipAddr}, []string{"txtv=0", "lo=1", "la=2"}, nil)
 		time.Sleep(time.Second * 60)
 		server.Shutdown()
 		server = nil

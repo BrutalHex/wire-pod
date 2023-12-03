@@ -2,6 +2,7 @@ package processreqs
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"strings"
 	"time"
@@ -49,7 +50,7 @@ func KGSim(esn string, textToSay string) error {
 	for _, bot := range vars.BotInfo.Robots {
 		if esn == bot.Esn {
 			guid = bot.GUID
-			target = bot.IPAddress + ":443"
+			target = bot.IPAddress + fmt.Sprintf(":%s", vars.GetHttpsPort())
 			matched = true
 			break
 		}

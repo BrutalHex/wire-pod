@@ -93,7 +93,7 @@ func WriteServer() {
 	epodCertFile, _ := os.ReadFile("./epod/ep.crt")
 	if strings.EqualFold(string(epodCertFile), os.Getenv("DDL_RPC_TLS_CERTIFICATE")) {
 		APIConfig.Server.EPConfig = true
-		APIConfig.Server.Port = "443"
+		APIConfig.Server.Port = vars.GetHttpsPort()
 	} else {
 		APIConfig.Server.EPConfig = false
 		APIConfig.Server.Port = os.Getenv("DDL_RPC_PORT")

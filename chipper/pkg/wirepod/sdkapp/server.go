@@ -486,23 +486,24 @@ func BeginServer() {
 	fileServer := http.FileServer(http.Dir(serverFiles))
 	http.Handle("/sdk-app", fileServer)
 	// in jdocspinger.go
-	http.HandleFunc("/ok:80", connCheck)
+	httpPort := vars.GetHttpPort()
+	http.HandleFunc(fmt.Sprintf("/ok:%s", httpPort), connCheck)
 	http.HandleFunc("/ok", connCheck)
 	InitJdocsPinger()
 	// camstream
 	http.HandleFunc("/cam-stream", camStreamHandler)
 	logger.Println("Starting SDK app")
-	fmt.Printf("Starting server at port 80 for connCheck\n")
+	fmt.Printf(fmt.Sprintf("Starting server at port %s for connCheck\n", httpPort))
 	ipAddr := botsetup.GetOutboundIP().String()
-	logger.Println("\033[1;36mConfiguration page: http://" + ipAddr + ":" + vars.WebPort + "\033[0m")
-	if err := http.ListenAndServe(":80", nil); err != nil {
+	logger.Println("\033[1;36mConfiguration page: http://" + ipAddr + ":" + vars.GetWebserverPor() + "\033[0m")
+	if err := http.ListenAndServe(fmt.Sprintf(":%s", httpPort), nil); err != nil {
 		if vars.Packaged {
 			zenity.Warning(
-				"A process is using port 80. Wire-pod will keep running, but connCheck functionality will not work, so your bot may not always stay connected to your wire-pod instance.",
+				fmt.Sprintf("A process is using port %s. Wire-pod will keep running, but connCheck functionality will not work, so your bot may not always stay connected to your wire-pod instance.", httpPort),
 				zenity.Title("wire-pod"),
 				zenity.WarningIcon,
 			)
 		}
-		logger.Println("A process is already using port 80 - connCheck functionality will not work")
+		logger.Println(fmt.Sprintf("A process is already using port %s - connCheck functionality will not work", httpPort))
 	}
 }
